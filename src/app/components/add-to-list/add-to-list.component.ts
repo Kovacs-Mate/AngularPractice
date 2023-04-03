@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Output } from '@angular/core';
-import { LIST } from './List';
+import { ListItem } from '../../core/dto/List';
 
 @Component({
   selector: 'app-add-to-list',
@@ -7,19 +7,23 @@ import { LIST } from './List';
   styleUrls: ['./add-to-list.component.css'],
 })
 export class AddToListComponent {
-  toList: LIST = {
-    id: NaN,
-    item: '',
-    unitCount: NaN,
-    unit: '',
+  listArticle: ListItem = {
+    id: null,
+    item: null,
+    unitCount: null,
+    unit: null,
   };
 
-  @Output() onSubmit = new EventEmitter<Object>();
+  id: number = 0;
 
-  addToList(toList: Object) {
-    this.onSubmit.emit(this.toList);
-    console.log(
-      'elküldtem ' + this.toList.item + this.toList.unit + this.toList.unitCount
-    );
+  options: Array<string> = ['darab', 'kilógramm', 'liter'];
+
+  @Output() listUpdate: EventEmitter<ListItem> = new EventEmitter();
+
+  addToList(listArticle: ListItem): void {
+    this.id++;
+    listArticle.id = this.id;
+
+    this.listUpdate.emit(listArticle);
   }
 }

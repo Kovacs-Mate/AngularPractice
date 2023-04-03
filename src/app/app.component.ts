@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { LIST } from './components/add-to-list/List';
+import { ListItem } from './core/dto/List';
 
 @Component({
   selector: 'app-root',
@@ -9,10 +9,10 @@ import { LIST } from './components/add-to-list/List';
 export class AppComponent {
   title = 'shopping_list';
 
-  list: Array<Object> = [];
+  list: Array<ListItem> = [];
 
-  addToList($event: Object, list: Array<Object>): void {
-    list.push($event);
-    console.log(list);
+  addToList(article: ListItem): void {
+    this.list.push(article);
+    console.log(this.list);
   }
 }

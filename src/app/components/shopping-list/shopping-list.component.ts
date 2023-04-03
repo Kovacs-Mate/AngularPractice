@@ -1,5 +1,5 @@
-import { Component, Input, Output, EventEmitter } from '@angular/core';
-import { LIST } from '../add-to-list/List';
+import { Component, Input } from '@angular/core';
+import { ListItem } from '../../core/dto/List';
 
 @Component({
   selector: 'app-shopping-list',
@@ -7,12 +7,5 @@ import { LIST } from '../add-to-list/List';
   styleUrls: ['./shopping-list.component.css'],
 })
 export class ShoppingListComponent {
-  list: Array<LIST> = [
-    {
-      id: 1,
-      item: 'Alma',
-      unitCount: 15,
-      unit: 'kilógramm',
-    },
-  ];
+  @Input() currentList: Array<ListItem> = [];
 }

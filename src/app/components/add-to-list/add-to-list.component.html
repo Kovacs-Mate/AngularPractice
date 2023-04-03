@@ -1,14 +1,12 @@
 <h1>Bevásárlólista</h1>
 <form>
-  <input [(ngModel)]="toList.item" [ngModelOptions]="{standalone: true}" type="text" placeholder="Termék megnevezése"
+  <input [(ngModel)]="listArticle.item" [ngModelOptions]="{standalone: true}" type="text"
+    placeholder="Termék megnevezése" required>
+  <input [(ngModel)]="listArticle.unitCount" [ngModelOptions]="{standalone: true}" type="number" placeholder="Mennyiség"
     required>
-  <input [(ngModel)]="toList.unitCount" [ngModelOptions]="{standalone: true}" type="number" placeholder="Mennyiség"
-    required>
-  <select [(ngModel)]="toList.unit" [ngModelOptions]="{standalone: true}" required>
-    <option>darab</option>
-    <option>kilógramm</option>
-    <option>liter</option>
+  <select [(ngModel)]="listArticle.unit" [ngModelOptions]="{standalone: true}" required>
+    <option *ngFor="let option of options">{{option}}</option>
   </select>
-  <button (click)="addToList(toList)" type="submit">Add a bevásárlólistához</button>
+  <button (click)="addToList(listArticle)" type="submit">Add a bevásárlólistához</button>
   <button type="submit">Lista módosítása</button>
 </form>
