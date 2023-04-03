@@ -9,6 +9,6 @@ export class AppComponent {
   title = 'shopping_list';
 
   public addToList($event: any): void {
-    console.log($event);
+    console.log('Megkaptam' + $event);
   }
 }
