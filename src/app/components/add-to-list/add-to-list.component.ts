@@ -8,15 +8,16 @@ import { LIST } from './List';
 })
 export class AddToListComponent {
   toList: LIST = {
+    id: NaN,
     item: '',
     unitCount: NaN,
     unit: '',
   };
 
-  @Output() onSubmit = new EventEmitter<any>();
+  @Output() onSubmit = new EventEmitter<Object>();
 
-  addToList(toList: any) {
-    this.onSubmit.emit(toList);
+  addToList(toList: Object) {
+    this.onSubmit.emit(this.toList);
     console.log(
       'elküldtem ' + this.toList.item + this.toList.unit + this.toList.unitCount
     );

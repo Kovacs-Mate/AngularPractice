@@ -1,4 +1,5 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
+import { LIST } from '../add-to-list/List';
 
 @Component({
   selector: 'app-shopping-list',
@@ -6,11 +7,11 @@ import { Component, Input, Output, EventEmitter } from '@angular/core';
   styleUrls: ['./shopping-list.component.css'],
 })
 export class ShoppingListComponent {
-  list = [
+  list: Array<LIST> = [
     {
       id: 1,
       item: 'Alma',
-      unitCount: 3,
+      unitCount: 15,
       unit: 'kilógramm',
     },
   ];
