@@ -1,0 +1,40 @@
+* {
+  font-size: 20px;
+  font-weight: 400;
+}
+.item {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: flex-start;
+  margin-bottom: 10px;
+  border-radius: 10px;
+  background-color: rgb(0, 110, 255);
+}
+.item h3 {
+  background-color: rgb(0, 110, 255);
+  padding: 10px 20px;
+  color: white;
+  border-radius: 10px 0 0 10px;
+}
+.item p {
+  background-color: rgb(136, 136, 136);
+  padding: 10px 20px;
+  color: white;
+  width: 300px;
+}
+.item button {
+  padding: 10px 20px;
+  background-color: rgb(0, 110, 255);
+  border: none;
+  color: white;
+  cursor: pointer;
+  transition: 0.2s;
+}
+.item button:last-child {
+  border-radius: 0 10px 10px 0;
+}
+.item button:hover {
+  scale: 1.03;
+  background-color: rgb(19, 121, 255);
+  box-shadow: 0 10px 10px -10px black;
+}
