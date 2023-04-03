@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { ListItem } from '../../core/dto/List';
 
 @Component({
@@ -8,4 +8,10 @@ import { ListItem } from '../../core/dto/List';
 })
 export class ShoppingListComponent {
   @Input() currentList: Array<ListItem> = [];
+
+  @Output() removeItem: EventEmitter<number | null> = new EventEmitter();
+
+  deleteArticle(id: number | null): void {
+    this.removeItem.emit(id);
+  }
 }

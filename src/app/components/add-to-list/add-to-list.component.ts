@@ -20,10 +20,19 @@ export class AddToListComponent {
 
   @Output() listUpdate: EventEmitter<ListItem> = new EventEmitter();
 
-  addToList(listArticle: ListItem): void {
+  addToList(): void {
     this.id++;
-    listArticle.id = this.id;
 
-    this.listUpdate.emit(listArticle);
+    this.listUpdate.emit({ ...this.listArticle, id: this.id });
+    this.clear();
+  }
+
+  clear(): void {
+    this.listArticle = {
+      id: null,
+      item: null,
+      unitCount: null,
+      unit: null,
+    };
   }
 }

@@ -1,4 +1,4 @@
 <div class="wrapper">
   <app-add-to-list (listUpdate)="addToList($event)"></app-add-to-list>
-  <app-shopping-list [currentList]="list"></app-shopping-list>
+  <app-shopping-list [currentList]="list" (removeItem)="deleteFromList($event)"></app-shopping-list>
 </div>

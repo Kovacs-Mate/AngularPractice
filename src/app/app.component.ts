@@ -15,4 +15,8 @@ export class AppComponent {
     this.list.push(article);
     console.log(this.list);
   }
+
+  deleteFromList(id: number | null): void {
+    this.list = this.list.filter((item) => item.id != id);
+  }
 }
